@@ -573,8 +573,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     /* sec7 */
+    
+    let contactView = 1
 
-    window.addEventListener("scroll", () => {
+    function contactAni() {
         let scroll =
             window.pageYOffset ||
             document.documentElement.scrollTop ||
@@ -590,96 +592,85 @@ window.addEventListener('DOMContentLoaded', () => {
         let con_right = document.querySelectorAll(".sec7 .contact .contact_right *")
         var tl = gsap.timeline();
 
-        console.log(con_left)
-        if(sec7Top <= 0) {
-            gsap.to(sec7, {
+        console.log(contactView)
+        if(sec7Top <= 0 && contactView == 1) {
+            contactView++
+            tl.to(sec7, {
                 duration: 2,
                 background: "#000000",
                 ease: "power4.out"
             })
-            gsap.to(cb_p1, {
-                delay: 2,
+            tl.to(cb_p1, {
+                delay: 1,
                 duration: 1,
                 opacity: 1,
                 ease: "power4.out"
             })
-            gsap.to(cb_p2, {
-                delay: 2.5,
+            tl.to(cb_p2, {
+                delay: .5,
                 duration: 1,
                 opacity: 0.5,
                 ease: "power4.out"
             })
-            gsap.to(cb_p1, {
-                delay: 4.5,
+            tl.to(cb_p1, {
+                delay: 2,
                 duration: 2,
                 opacity: 0,
                 ease: "power4.out"
             })
-            gsap.to(cb_p2, {
-                delay: 4.5,
+            tl.to(cb_p2, {
                 duration: 2,
                 opacity: 0,
                 ease: "power4.out"
             })
-            gsap.to(nar, {
-                delay: 5,
+            tl.to(nar, {
+                delay: .5,
                 duration: 1,
                 opacity: 1,
                 ease: "power4.out"
             })
-            gsap.to(nar, {
-                delay: 8,
+            tl.to(nar, {
+                delay: 3.5,
                 duration: 1,
                 opacity: 0,
                 ease: "power4.out"
             })
-            gsap.to(con_left, {
-                delay: 9,
+            tl.to(con_left, {
+                delay: 2,
                 duration: 3,
                 opacity: 1,
                 stagger: 0.8,
                 ease: "power4.out"
             })
-            gsap.to(con_right, {
-                delay: 9,
+            tl.to(con_right, {
                 duration: 3,
                 opacity: 1,
                 stagger: 0.8,
-                ease: "power4.out"
-            })
-        } else {
-            gsap.to(sec7, {
-                duration: 2,
-                background: "#fff",
-                ease: "power4.out"
-            })
-            gsap.to(cb_p1, {
-                duration: 1,
-                opacity: 0,
-                ease: "power4.out"
-            })
-            gsap.to(cb_p2, {
-                duration: 1,
-                opacity: 0,
-                ease: "power4.out"
-            })
-            gsap.to(nar, {
-                duration: 1,
-                opacity: 0,
-                ease: "power4.out"
-            })
-            gsap.to(con_left, {
-                duration: 1,
-                opacity: 0,
-                ease: "power4.out"
-            })
-            gsap.to(con_right, {
-                duration: 1,
-                opacity: 0,
                 ease: "power4.out"
             })
         }
-    })
+    }
+    window.addEventListener("scroll", contactAni)
+
+    // function contact_kill(){
+    //     let scroll =
+    //         window.pageYOffset ||
+    //         document.documentElement.scrollTop ||
+    //         window.scrollY;
+    //     let viewpoint = window.innerHeight / 2;
+    //     let sec7 = document.querySelector(".sec7");
+    //     let sec7A = document.querySelectorAll(".sec7 *");
+    //     let sec7Top = document.querySelector(".sec7").getBoundingClientRect().top;
+    //     let cb_p1 = document.querySelector(".sec7 .cb_p1")
+    //     let cb_p2 = document.querySelector(".sec7 .cb_p2")
+    //     let nar = document.querySelector(".sec7 .contact_before h3")
+    //     let con_left = document.querySelectorAll(".sec7 .contact .contact_left *")
+    //     let con_right = document.querySelectorAll(".sec7 .contact .contact_right *")
+    //     var tl = gsap.timeline();
+
+    //     if(sec7Top > 0) {
+    //     }
+    // }
 
     /* contact */
 
