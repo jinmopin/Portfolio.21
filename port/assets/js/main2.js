@@ -546,6 +546,15 @@ window.addEventListener('DOMContentLoaded', () => {
         let txt1 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(1)")
         let txt2 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(2)")
         let txt3 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(3)")
+        let txt4 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(4)")
+        let txt5 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(5)")
+        let txt6 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(6)")
+        let txt7 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(7)")
+        let txt8 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(8)")
+        let txt9 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(9)")
+        let txt10 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(10)")
+
+
         let frame = document.querySelector(".sec5 .library .lib_cont .frameout")
 
         let offset = (window.pageYOffset - txtwrapTop) * 0.08;
@@ -565,6 +574,34 @@ window.addEventListener('DOMContentLoaded', () => {
                 duration: 0.3,
                 x: offset,
             })
+            gsap.to(txt4, {
+                duration: 0.3,
+                x: -offset,
+            })
+            gsap.to(txt5, {
+                duration: 0.3,
+                x: offset,
+            })
+            gsap.to(txt6, {
+                duration: 0.3,
+                x: -offset,
+            })
+            gsap.to(txt7, {
+                duration: 0.3,
+                x: offset,
+            })
+            gsap.to(txt8, {
+                duration: 0.3,
+                x: -offset,
+            })
+            gsap.to(txt9, {
+                duration: 0.3,
+                x: offset,
+            })
+            gsap.to(txt10, {
+                duration: 0.3,
+                x: -offset,
+            })
             gsap.to(frame, {
                 duration: 0.3,
                 y: -offset3,
@@ -572,8 +609,41 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
+    /* webline */
+    window.addEventListener("scroll", () => {
+        let scroll =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            window.scrollY;
+        let viewpoint = window.innerHeight / 1.2;
+        let libwrap = document.querySelector(".sec5 .library")
+        let libwrapbot = document.querySelector(".sec5 .library").getBoundingClientRect().bottom - viewpoint
+        let libText = document.querySelector(".sec5 .library .lib_cont .lib_text")
+        let crisis = document.querySelector(".sec5 .crisis")
+        console.log(libwrapbot)
+        
+        if(libwrapbot <= 0) {
+            libText.classList.add("active")
+            gsap.to(crisis, {
+                delay: 1,
+                duration: 2,
+                y: "100vw",
+                ease: "power4.out"
+            })
+        }
+    })
+
+
+
+
+
+
+
+
+
     /* sec7 */
-    
+
     let contactView = 1
 
     function contactAni() {
@@ -593,7 +663,7 @@ window.addEventListener('DOMContentLoaded', () => {
         var tl = gsap.timeline();
 
         console.log(contactView)
-        if(sec7Top <= 0 && contactView == 1) {
+        if (sec7Top <= 0 && contactView == 1) {
             contactView++
             tl.to(sec7, {
                 duration: 2,

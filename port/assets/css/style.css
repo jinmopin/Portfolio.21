@@ -926,7 +926,7 @@
     padding-top: 100px;
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 200vh;
     flex-direction: column;
     overflow: hidden;
 }
@@ -952,21 +952,40 @@
     white-space: nowrap;
 }
 
-.sec5 .library .lib_cont .lib_text>div:nth-child(1) {
-    position: relative;
-    left: -400%;
-    z-index: 5502;
-}
-
-.sec5 .library .lib_cont .lib_text>div:nth-child(2) {
-    position: relative;
-    z-index: 5501;
-}
-
-.sec5 .library .lib_cont .lib_text>div:nth-child(3) {
+.sec5 .library .lib_cont .lib_text>div:nth-child(2n-1) {
     position: relative;
     left: -400%;
     z-index: 5503;
+}
+.sec5 .library .lib_cont .lib_text>div:nth-child(2n) {
+    position: relative;
+    z-index: 5501;
+}
+.sec5 .library .lib_cont .lib_text>div:nth-child(10) {
+}
+.sec5 .library .lib_cont .lib_text:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0vw;
+    height: 0.2vw;
+    background: #000;
+}
+.sec5 .library .lib_cont .lib_text.active:after {
+    animation: webline 3s ease-in-out forwards;
+}
+@keyframes webline {
+    0% {
+        width: 0vw
+    }
+    100% {
+        width: 100vw;
+    }
+}
+.sec5 .library .lib_cont .lib_text>div:nth-child(10):hover {
+    color: #fade01;
+    
 }
 
 .sec5 .library .lib_cont .frameout {
@@ -1013,6 +1032,38 @@
     height: 10vw;
 }
 
+.sec5 .bluewall {
+    position: absolute;
+    bottom: 15%;
+    left: 65%;
+    width: 14vw;
+    height: 14vw;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sec5 .bluewall img {
+    width: 14vw;
+    height: 20vw;
+}
+
+.sec5 .flower {
+    position: absolute;
+    bottom: 45%;
+    left: 40%;
+    width: 16vw;
+    height: 24vw;
+    overflow: hidden;
+}
+.sec5 .flower:hover {
+    background: #777;
+    color: #050801;
+    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+.sec5 .flower img {
+    width: 16vw;
+    height: 24vw;
+}
+
 .sec5 .crisis {
     position: absolute;
     font-family: "BRANCHE";
@@ -1025,7 +1076,7 @@
 .sec5 .library .lib_cont .frame img {
     --d: 20;
     position: absolute;
-    top: -5%;
+    top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
