@@ -1,6 +1,25 @@
 window.addEventListener('DOMContentLoaded', () => {
 
 
+    /* sec1 */
+    function main(){
+        let maintit = document.querySelector(".sec1 .maintit h2")
+        let face = document.querySelector(".sec1 .face")
+        var tl = gsap.timeline();
+
+        tl.to(maintit, {
+            duration: 2,
+            y: "-7vw",
+            opacity: 1,
+        })
+        tl.to(face, {
+            duration: 1,
+            width: "27vw",
+            height: "27vw",
+            opacity: 1,
+        })
+    }
+    main();
 
     /* sec2 */
     // sec2 Line, Exposition
@@ -20,6 +39,24 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // sec2 about
+
+    window.addEventListener("scroll", () => {
+        let scroll =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        window.scrollY;
+        let viewpoint = window.innerHeight / 2;
+        let abouttit = document.querySelector(".sec2 h2")
+        const aboutTop=
+        window.pageYOffset +
+        abouttit.getBoundingClientRect().top;
+        if(scroll >= aboutTop - viewpoint)
+        gsap.to(abouttit, {
+            duration: 1,
+            opacity: 1,
+            y: 0,
+        })
+    })
 
     document
         .querySelectorAll(".sec2 .txt-wrap .split")
@@ -553,6 +590,16 @@ window.addEventListener('DOMContentLoaded', () => {
         let txt8 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(8)")
         let txt9 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(9)")
         let txt10 = document.querySelector(".sec5 .library .lib_cont .lib_text div:nth-child(10)")
+        let eye = document.querySelector(".sec5 .eye")
+        let cotton = document.querySelector(".sec5 .cotton img")
+        let wall = document.querySelector(".sec5 .wall img")
+        let girl = document.querySelector(".sec5 .girl img")
+        let tree = document.querySelector(".sec5 .tree img")
+        let eyeTop = document.querySelector(".sec5 .eye").getBoundingClientRect().top - viewpoint
+        let cottonTop = document.querySelector(".sec5 .cotton").getBoundingClientRect().top - viewpoint
+        let wallTop = document.querySelector(".sec5 .wall").getBoundingClientRect().top - viewpoint
+        let girlTop = document.querySelector(".sec5 .girl").getBoundingClientRect().top - viewpoint
+        let treeTop = document.querySelector(".sec5 .tree").getBoundingClientRect().top - viewpoint
 
 
         let frame = document.querySelector(".sec5 .library .lib_cont .frameout")
@@ -560,6 +607,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let offset = (window.pageYOffset - txtwrapTop) * 0.08;
         let offset2 = (window.pageYOffset - txtwrapTop) * 0.05;
         let offset3 = (txtwrapTop) * 0.3;
+        let offset4 = (txtwrapTop) * 0.1;
 
         if (scroll >= txtwrapTop) {
             gsap.to(txt1, {
@@ -606,7 +654,38 @@ window.addEventListener('DOMContentLoaded', () => {
                 duration: 0.3,
                 y: -offset3,
             })
+            gsap.to(wall, {
+                duration: 0.3,
+                x: offset4,
+            })
+            gsap.to(girl, {
+                duration: 0.3,
+                x: offset4,
+            })
+            gsap.to(tree, {
+                duration: 0.3,
+                x: offset4,
+            })
         }
+    });
+
+    window.addEventListener("scroll", () => {
+        let scroll =
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            window.scrollY;
+        let viewpoint = window.innerHeight / 2;
+        let txtwrap = document.querySelector(".sec5 .library .lib_cont .lib_text")
+        let libwrap = document.querySelector(".sec5 .library")
+
+        console.log(eyeTop)
+        if(eyeTop <= 0) {
+            gsap.to(eye, {
+                duration: 0.1,
+                opacity: 1
+            })
+        } 
+
     });
 
 
@@ -616,7 +695,7 @@ window.addEventListener('DOMContentLoaded', () => {
             window.pageYOffset ||
             document.documentElement.scrollTop ||
             window.scrollY;
-        let viewpoint = window.innerHeight / 1.2;
+        let viewpoint = window.innerHeight * 2;
         let libwrap = document.querySelector(".sec5 .library")
         let libwrapbot = document.querySelector(".sec5 .library").getBoundingClientRect().bottom - viewpoint
         let libText = document.querySelector(".sec5 .library .lib_cont .lib_text")
@@ -633,6 +712,43 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         }
     })
+    
+    
+    /* sec6 */
+    //cursor
+
+    // window.addEventListener("mousemove", function(e){
+    //     let viewcursor = document.querySelector(".sec6 .viewcursor")
+    //     let viewcursorRectW = viewcursor.getBoundingClientRect().width;
+    //     let viewcursorRectH = viewcursor.getBoundingClientRect().height;
+    //     let offsetX = window.pageXOffset
+    //     let offsetY = window.pageYOffset
+
+    //     document.querySelectorAll(".sec6 .web_cont .web_mock").forEach((elem) => {
+    //         elem.addEventListener("mouseenter", () => {
+    //             gsap.to(viewcursor, {
+    //                 duration: 0.6,
+    //                 width: "50px",
+    //                 height: "50px",
+    //                 opacity: 1,
+    //                 fontSize: "12px",
+    //                 ease: "bounce.out",
+    //             })
+    //         });
+    //         elem.addEventListener("mouseleave", () => {
+    //             gsap.to(viewcursor, {
+    //                 duration: 0.6,
+    //                 width: "0px",
+    //                 height: "0px",
+    //                 opacity: 0,
+    //                 fontSize: "0px",
+    //                 ease: "bounce.out",
+    //             })
+    //         });
+    //     });
+
+    //     // gsap.to(viewcursor, {duration: 0.3, left: e.pageX -50, top: e.clientY});
+    // })
 
 
 
@@ -667,7 +783,7 @@ window.addEventListener('DOMContentLoaded', () => {
             contactView++
             tl.to(sec7, {
                 duration: 2,
-                background: "#000000",
+                background: "#c4c4c4",
                 ease: "power4.out"
             })
             tl.to(cb_p1, {

@@ -141,17 +141,17 @@
 
 #section5 {
     height: 5500px;
-    background: #ffffff;
+    background: #000;
     z-index: 5500;
 }
 
 #section6 {
-    height: 6500px;
+    height: 15500px;
     z-index: 6000;
 }
 
 #section7 {
-    background: #ffffff;
+    background: #000;
     height: 100vh;
     z-index: 6500;
 }
@@ -171,20 +171,30 @@
 }
 
 /* sec1 */
-.sec1 h2 {
-    font-family: "Miracle";
-    font-size: 19vw;
+.sec1 .maintit {
     position: absolute;
+    width: 100%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -80%);
+    height: 22vw;
+    text-align: center;
     z-index: 1000;
+    overflow: hidden;
+}
+.sec1 .maintit h2 {
+    font-family: "Miracle";
+    font-size: 19vw;
+    transform: translateY("-200px");
+    opacity: 0;
+
+    
 }
 
 .sec1 h2 .hit {
     font-size: 30px;
     position: absolute;
-    right: -2vw;
+    right: 10vw;
     bottom: 0vw;
     color: #565656;
     font-family: "North";
@@ -202,7 +212,7 @@
     height: 3vw;
     background: #fade01;
     position: absolute;
-    left: -40%;
+    left: -15%;
     top: 42.1%;
     animation: Line 5s forwards;
     animation-delay: 2s;
@@ -223,11 +233,12 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -30%);
-    width: 27vw;
-    height: 27vw;
+    width: 0vw;
+    height: 0vw;
     z-index: 900;
     background: url("../img/main-face.jpg") center top / cover;
     border-radius: 50%;
+    opacity: 0;
 }
 
 .sec1 .face img {
@@ -256,6 +267,7 @@
     font-weight: normal;
     margin-bottom: 20%;
     position: relative;
+    opacity: 0.3;
 }
 
 .sec2 h2 .hit {
@@ -910,7 +922,7 @@
     top: 47%;
     left: 60%;
     transform: translate(-50%, -50%);
-    background: #ffffff;
+    background: #000;
     border-radius: 50%;
     z-index: 5499;
 }
@@ -929,6 +941,7 @@
     height: 200vh;
     flex-direction: column;
     overflow: hidden;
+    height: 2500px;
 }
 
 .sec5 .library .lib_mark {
@@ -956,10 +969,14 @@
     position: relative;
     left: -400%;
     z-index: 5503;
+    color: #fff;
+    mix-blend-mode: difference;
 }
 .sec5 .library .lib_cont .lib_text>div:nth-child(2n) {
     position: relative;
     z-index: 5501;
+    color: #fff;
+    mix-blend-mode: difference;
 }
 .sec5 .library .lib_cont .lib_text>div:nth-child(10) {
 }
@@ -970,7 +987,7 @@
     left: 0;
     width: 0vw;
     height: 0.2vw;
-    background: #000;
+    background: #fff;
 }
 .sec5 .library .lib_cont .lib_text.active:after {
     animation: webline 3s ease-in-out forwards;
@@ -1020,11 +1037,12 @@
 
 .sec5 .eye {
     position: absolute;
-    top: 15%;
-    left: 80%;
+    top: 5%;
+    left: 85%;
     width: 12vw;
     height: 12vw;
     overflow: hidden;
+    opacity: 0;
 }
 
 .sec5 .eye img {
@@ -1032,18 +1050,30 @@
     height: 10vw;
 }
 
-.sec5 .bluewall {
+.sec5 .ben {
     position: absolute;
-    bottom: 15%;
-    left: 65%;
+    top: -10%;
+    right: 0%;
+    width: 8vw;
+    height: 40vw;
+    overflow: hidden;
+}
+.sec5 .ben img {
+}
+
+.sec5 .cotton {
+    position: absolute;
+    bottom: 5%;
+    left: 45%;
     width: 14vw;
     height: 14vw;
     border-radius: 50%;
     overflow: hidden;
 }
-.sec5 .bluewall img {
+.sec5 .cotton img {
     width: 14vw;
     height: 20vw;
+    filter: grayscale(100%) contrast(100%);
 }
 
 .sec5 .flower {
@@ -1053,20 +1083,49 @@
     width: 16vw;
     height: 24vw;
     overflow: hidden;
+    z-index: 5600;
 }
 .sec5 .flower:hover {
-    background: #777;
+    background: #fff;
     color: #050801;
     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
 .sec5 .flower img {
     width: 16vw;
     height: 24vw;
+    filter: grayscale(100%) contrast(100%);
+}
+.sec5 .wall {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    width: 20vw;
+    height: 15vw;
+    overflow: hidden;
+}
+.sec5 .wall img {
+}
+.sec5 .girl {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 25vw;
+    height: 50vw;
+    overflow: hidden;
+}
+.sec5 .tree {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 15vw;
+    height: 40vw;
+    overflow: hidden;
 }
 
 .sec5 .crisis {
     position: absolute;
     font-family: "BRANCHE";
+    color: #fff;
     top: 7%;
     left: 5%;
     font-size: 4vw;
@@ -1084,6 +1143,7 @@
     transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
     transform: translate(calc(var(--x) / var(--d) * 1px), calc(var(--y) / var(--d) * 1px));
     z-index: 5502;
+    filter: grayscale(100%) contrast(100%);
 }
 
 .sec5 .web .web_tit {
@@ -1118,54 +1178,83 @@
     height: inherit;
 }
 
-.sec6 .butterfly {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Butterflies";
-    font-size: 5vw;
+
+/* .sec6 .viewcursor {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: #000;
+    line-height: 50px;
+    text-align: center;
+    font-size: 0vw;
+    color: #fff;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0;
     z-index: 5999;
-}
+} */
+
 
 .sec6 .web_cont {
-    width: 90vw;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     padding-top: 100px;
     padding-bottom: 100px;
 }
 
-.sec6 .web_cont .web_box {
-    display: flex;
-    width: 90vw;
-    padding-bottom: 200px;
-}
-
-.sec6 .web_cont .web_mock {
-    flex: 1 1 40%;
-    padding: 4vw 0 4vw 0;
-    filter: grayscale(100%) contrast(100%);
-    transition: 1s all;
-}
-.sec6 .web_cont .web_mock:hover {
-    filter: grayscale(0%) contrast(100%);
-}
-
-.sec6 .web_cont .web_box:nth-child(2n) .web_desc {
-    padding: 4vw 0 4vw 0;
-    text-align-last: right;
-}
-
-.sec6 .web_cont .web_mock img {
+.sec6 .web_cont .web_cont_text p{
+    position: fixed;
     width: 100%;
+    text-align: center;
+    font-family: "BRANCHE";
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    font-size: 9vw;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sec6 .web_cont .web_cont_text p:hover {
+    color: #fff;
 }
 
-.sec6 .web_cont .web_desc {
-    flex: 1 1 40%;
-    padding: 4vw 0 4vw 0;
-    font-family: "BRANCHE";
-    font-size: 8vw;
-    line-height: 2.5;
+.sec6 .web_site_box {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec6 .web_site_box .site_img {
+    position: absolute;
+    width: 30vw;
+    height: 60vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.sec6 .web_site_box .site_img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.4);
+    filter: grayscale(100%) contrast(100%);
+}
+
+.sec6 .web_site_box03 .site_img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    filter: grayscale(100%) contrast(100%);
+}
+.sec6 .web_site_box .site_img img:hover {
+    filter: none
 }
 
 /* .sec6 .sec6title {
@@ -1309,9 +1398,3 @@
     font-family: "BRANCHE";
     color: #000000;
 } */
-
-/* sec8 */
-
-.sec8 {}
-
-.sec8 .web_site_tit {}
