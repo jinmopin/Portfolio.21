@@ -677,6 +677,8 @@ window.addEventListener('DOMContentLoaded', () => {
         let viewpoint = window.innerHeight / 2;
         let txtwrap = document.querySelector(".sec5 .library .lib_cont .lib_text")
         let libwrap = document.querySelector(".sec5 .library")
+        let eye = document.querySelector(".sec5 .eye")
+        let eyeTop = document.querySelector(".sec5 .eye").getBoundingClientRect().top - viewpoint
 
         console.log(eyeTop)
         if(eyeTop <= 0) {
@@ -751,9 +753,43 @@ window.addEventListener('DOMContentLoaded', () => {
     // })
 
 
-
-
-
+    //web site
+    new hoverEffect({
+        parent: document.querySelector(".sec6 .web_site_box01 .distortion"),
+        intensity: 0.2,
+        // image1: ".sec6 .web01",
+        // image2: ".sec6 .web01",
+        image1: "../assets/img/mock-webs.gif",
+        image2: "../assets/img/mock-webs.gif",
+        displacementImage: "../assets/img/diss.png"
+    });
+    new hoverEffect({
+        parent: document.querySelector(".sec6 .web_site_box02 .distortion"),
+        intensity: 0.2,
+        // image1: ".sec6 .web01",
+        // image2: ".sec6 .web01",
+        image1: "../assets/img/mock-RS2-1.png",
+        image2: "../assets/img/mock-RS2-1.png",
+        displacementImage: "../assets/img/diss.png"
+    });
+    new hoverEffect({
+        parent: document.querySelector(".sec6 .web_site_box03 .distortion"),
+        intensity: 0.2,
+        // image1: ".sec6 .web01",
+        // image2: ".sec6 .web01",
+        image1: "../assets/img/mock-mega.png",
+        image2: "../assets/img/mock-mega.png",
+        displacementImage: "../assets/img/diss.png"
+    });
+    new hoverEffect({
+        parent: document.querySelector(".sec6 .web_site_box04 .distortion"),
+        intensity: 0.2,
+        // image1: ".sec6 .web01",
+        // image2: ".sec6 .web01",
+        image1: "../assets/img/mock-PHP01.png",
+        image2: "../assets/img/mock-PHP01.png",
+        displacementImage: "../assets/img/diss.png"
+    });
 
 
 
