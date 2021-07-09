@@ -1,0 +1,82 @@
+<?php
+    include '../connect/connect.php';
+    include '../connect/session.php';
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Site</title>
+
+    <!-- meta -->
+    <?php
+        include "../component/meta.php"
+        ?>
+    <!-- //meta -->
+</head>
+
+<body>
+    <!-- skip -->
+    <div id="skip">
+        <a href="#mainCont">컨텐츠 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- header -->
+    <?php
+    include "../component/header.php"
+    ?>
+    <!-- //header -->
+
+    <!-- main -->
+    <main id="main">
+        <section id="mainCont">
+            <div class="main-cont">
+                <div class="main-text">
+                    <div>WE PROVIDE</div>
+                    <div>VISUAL CODING</div>
+                    <div>SOLUTION</div>
+                    <div>FOR YOU WEBS</div>
+                    <?php
+                    echo"<pre>";
+                    var_dump($_SESSION);
+                    echo"<pre>";
+                    ?>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer-info">
+            <div>
+                <h3>Email</h3>
+                <p>jinmopin@gmail.com</p>
+            </div>
+            <div>
+                <h3>KAKAO</h3>
+                <P>jjiin00</P>
+            </div>
+            <div>
+                <h3>Social</h3>
+                <ul>
+                    <li><a href="#">Youtube</a></li>
+                    <li><a href="#">Instargram</a></li>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Reference</a></li>
+                    <li><a href="#">Tutorial</a></li>
+                    <li><a href="#">Animation</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+</body>
+
+</html>

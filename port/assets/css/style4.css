@@ -199,6 +199,7 @@
     font-family: "North";
     letter-spacing: 1px;
 }
+
 .sec1 .hit span {
     display: inline-block;
     transform: translateY(100px);
@@ -240,6 +241,7 @@
     text-align: center;
     padding: 300px 0 200px 0;
 }
+
 .sec2 .sec2tit {
     position: relative;
 }
@@ -254,7 +256,8 @@
     margin-bottom: 20%;
     z-index: 5700;
 }
-.sec2 h2 span{
+
+.sec2 h2 span {
     position: relative;
     display: inline-block;
     font-size: 15vw;
@@ -1160,18 +1163,29 @@
 }
 
 
-.sec5 .lib_text em {
-    
-}
+.sec5 .lib_text em {}
+
 .sec5 .lib_text em.active {
     animation: climax 3s infinite;
 }
 
 @keyframes climax {
-    0% {font-family: "North"; text-transform: uppercase;}
-    50% {font-family: "Miracle"; text-transform: uppercase;}
-    100% {font-family: "Champagne"; text-transform: uppercase;}
+    0% {
+        font-family: "North";
+        text-transform: uppercase;
+    }
+
+    50% {
+        font-family: "Miracle";
+        text-transform: uppercase;
+    }
+
+    100% {
+        font-family: "Champagne";
+        text-transform: uppercase;
+    }
 }
+
 /* sec6 */
 
 .sec6 {
